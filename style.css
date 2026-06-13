@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffe5ec;
+    color: #4c1c24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    max-width: 500px;
+    padding: 20px;
+}
+
+h1 { color: #ff4d6d; }
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    height: 50px; 
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#btn-sim {
+    background-color: #ff4d6d;
+    color: white;
+    position: absolute;
+}
+
+#btn-nao {
+    background-color: #6c757d;
+    color: white;
+}
+
+.card-desculpa {
+    margin-top: 30px;
+}
+
+#btn-desculpa {
+    background-color: #ffb3c1;
+    color: #4c1c24;
+    font-weight: bold;
+}
+
+#texto-desculpa {
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 18px;
+}
+
+/* O fundo escurecido que cobre a tela toda */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1000; /* Garante que fica na frente de tudo */
+}
+
+/* Quando adicionarmos essa classe via JS, o bilhete aparece */
+.modal-overlay.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* O design do bilhete fofo */
+.bilhete {
+    background: #fffdf6; /* Cor de papel antigo/cartinha */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 2px dashed #ff4d6d; /* Bordinha tracejada charmosa */
+    text-align: center;
+    position: relative;
+    transform: scale(0.7);
+    transition: all 0.3s ease;
+}
+
+/* Efeito de zoom suave ao abrir o bilhete */
+.modal-overlay.mostrar .bilhete {
+    transform: scale(1);
+}
+
+.bilhete h2 {
+    color: #ff4d6d;
+    margin-top: 10px;
+}
+
+.bilhete p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4c1c24;
+}
+
+#fechar-bilhete {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+#fechar-bilhete:hover {
+    color: #ff4d6d;
+}
